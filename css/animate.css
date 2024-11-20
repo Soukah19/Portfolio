@@ -35,6 +35,168 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-duration: .75s;
   animation-duration: .75s;
 }
+.desc1 {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.863);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%; /* Fixed height to prevent overflow */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden; /* Prevent content from pushing the button out */
+}
+
+.con {
+  flex: 1;
+  overflow-y: auto; /* Allow text to scroll if it exceeds container height */
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.desc1 a {
+  text-align: center;
+  background-color: whitesmoke;
+  color: #007bff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .desc1 {
+      height: auto; /* Adjust for smaller screens */
+      padding: 10px;
+  }
+
+  .desc1 a {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+
+  .description {
+      font-size: 12px;
+  }
+}
+
+
+.con a {
+  background-color: whitesmoke;
+  color: #007bff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  display: inline-block;
+  margin-top: auto; /* Push the button to the bottom if needed */
+}
+
+
+/* Style the arrows */
+.custom-arrow .carousel-control-prev-icon,
+.custom-arrow .carousel-control-next-icon {
+    background-color: #000; /* Dark background for arrows */
+    border-radius: 50%;
+    border: 2px solid #fff; /* White border */
+    width: 50px;
+    height: 50px;
+    background-size: 60%; /* Smaller arrow icons */
+}
+.carousel-inner img {
+  width: 100%; /* Ensures the image scales to fit the width of the carousel */
+  height: 400px; /* Sets a consistent height for all images */
+  object-fit: cover; /* Ensures images are cropped proportionally to fit */
+}
+
+/* Hover effect for arrows */
+.custom-arrow:hover .carousel-control-prev-icon,
+.custom-arrow:hover .carousel-control-next-icon {
+    background-color: #007bff; /* Blue background on hover */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Indicators styling directly under the images */
+.carousel-indicators.custom-indicators {
+  position: absolute;
+  bottom: 15px; /* Adjust to be directly under the images */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.carousel-indicators.custom-indicators li {
+  width: 12px;
+  height: 12px;
+  background-color: grey; /* Default gray color */
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators.custom-indicators .active {
+  background-color: #555; /* Slightly darker gray for the active indicator */
+}
+
+
+/* Carousel images styling */
+.carousel-item img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+
+.logos {
+  overflow: hidden; /* Hide overflowing images */
+  /* background-color: #f9f9f9;   */
+  padding: 20px 0;
+}
+
+.marquee {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+/* Ensure container responsiveness */
+.logos.container {
+  max-width: 1200px; /* Limit the maximum width */
+  margin: 0 auto;    /* Center the section */
+  padding: 0 15px;   /* Add padding to prevent overflow */
+}
+
+/* Style the paragraph to avoid overflow */
+.content-text {
+  word-wrap: break-word; /* Ensure long words break correctly */
+  line-height: 1.6;      /* Improve readability */
+  font-size: 1rem;       /* Set a comfortable font size */
+  text-align: justify;   /* Justify text alignment */
+}
+
+.track {
+  display: flex;
+  animation: scroll-left 60s linear infinite; /* Animation properties */
+  width: max-content; /* Ensure the track resizes based on content */
+}
+.track img {
+  margin: 0 15px; /* Add spacing between logos */
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0); /* Start position */
+  }
+  to {
+    transform: translateX(-100%); /* End position */
+  }
+}
 
 @-webkit-keyframes bounce {
   from, 20%, 53%, 80%, to {
